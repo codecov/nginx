@@ -1,11 +1,9 @@
-FROM debian:jessie
-
-MAINTAINER Oleg Ozimok "ozimok.oleg@gmail.com"
+FROM debian:jessie-slim
 
 ENV NGINX_VERSION 1.15.0
 ENV NGINX_REDIS2_MODULE_VERSION 0.15
-ENV NGINX_DEVEL_KIT_VERSION 0.2.19
-ENV NGINX_SET_MISC_MODULE_VERSION 0.29
+ENV NGINX_DEVEL_KIT_VERSION 0.3.0
+ENV NGINX_SET_MISC_MODULE_VERSION 0.32
 ENV NGINX_MODULE_SOURCE https://github.com
 
 RUN apt-get update \
@@ -97,6 +95,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 VOLUME ["/var/cache/nginx"]
 
-EXPOSE 80 443
+EXPOSE 8888
 
 CMD ["nginx", "-g", "daemon off;"]
