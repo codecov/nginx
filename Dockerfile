@@ -72,7 +72,8 @@ RUN ./configure --sbin-path=/usr/local/sbin \
                 --with-http_ssl_module \
                 --add-module=/tmp/ngx_devel_kit \
                 --add-module=/tmp/set-misc-nginx-module \
-                --add-module=/tmp/lua-nginx-module && \
+                --add-module=/tmp/lua-nginx-module \
+                --with-http_stub_status_module && \
     make && \
     make install
 
